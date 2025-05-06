@@ -15,9 +15,126 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="./assets/css/main.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="nofollow" 
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+        /* Mobile responsive additions */
+        @media (max-width: 767.98px) {
+            .navbar-nav {
+                flex-direction: column !important;
+            }
+            .navbar-university-logo img {
+                max-width: 100%;
+                height: auto;
+            }
+            .navbar .container-fluid .row {
+                flex-direction: column;
+            }
+            .navbar .container-fluid .row > div {
+                width: 100%;
+                max-width: 100%;
+                flex: 0 0 100%;
+                justify-content: center !important;
+                margin-bottom: 10px;
+            }
+            #footer .row {
+                flex-direction: column;
+            }
+            #footer .col-4 {
+                width: 100%;
+                max-width: 100%;
+                flex: 0 0 100%;
+                margin-bottom: 20px;
+            }
+            .carousel-item img {
+                width: 100%;
+                height: auto;
+                object-fit: cover;
+            }
+            .card {
+                margin-bottom: 20px;
+            }
+            .twitter-timeline iframe {
+                width: 100% !important;
+                max-width: 100% !important;
+            }
+        }
+        
+        /* Small screens */
+        @media (max-width: 575.98px) {
+            .navbar-brand img {
+                max-width: 80%;
+                margin: 0 auto;
+            }
+            .dropdown-menu {
+                position: static !important;
+                float: none !important;
+                width: 100%;
+            }
+        }
+
+        /* Custom navbar for mobile */
+        .mobile-menu-toggle {
+            display: none;
+            z-index: 1000;
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: #333 !important;
+            color: white !important;
+            border: 2px solid #666 !important;
+        }
+
+        @media (max-width: 991.98px) {
+            .mobile-menu-toggle {
+                display: block;
+                position: absolute;
+                top: 15px;
+                right: 15px;
+                z-index: 1000;
+                background-color: #333 !important;
+                color: white !important;
+                border: 2px solid #666 !important;
+            }
+            .navbar-nav {
+                display: none;
+            }
+            .navbar-nav.show {
+                display: flex;
+                width: 100%;
+            }
+            .navbar .w-100.mt-2 {
+                position: relative;
+            }
+        }
+
+        /* Fix carousel images */
+        .carousel-item img {
+            margin: 0 auto;
+            max-height: 500px;
+            width: auto;
+        }
+        
+        @media (max-width: 767.98px) {
+            .carousel-item img {
+                max-height: 300px;
+            }
+        }
+        
+        /* Research cards equal height */
+        .card {
+            height: 100%;
+        }
+        
+        /* Overall container padding for mobile */
+        @media (max-width: 767.98px) {
+            .container {
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+        }
+    </style>
 </head>
 
 <body class="homepage is-preload">
@@ -27,19 +144,22 @@
         <nav class="navbar pb-3 fw-bold" style="background-color: #EEEEEE;">
             <div class="container-fluid">
                 <div class="row w-100 align-items-center" >
-                    <div class="col-4 d-flex justify-content-start full-left" >
+                    <div class="col-md-4 col-12 d-flex justify-content-center justify-content-md-start mb-2 mb-md-0" >
                         <a class="navbar-university-logo" href="https://www.buffalo.edu/">
                             <img src="./images/UB_Horizontal_Small.png">
                         </a>
                     </div>
-                    <div class="col-4 d-flex justify-content-center">
+                    <div class="col-md-4 col-12 d-flex justify-content-center mb-2 mb-md-0">
                         <a class="navbar-brand ms-3" href="./">
                             <img class="img-fluid" src="./images/yulogo.png">
                         </a>
                     </div>
-                    <div class="col-4"></div>
+                    <div class="col-md-4 col-12"></div>
                 </div>
                 <div class="w-100 mt-2" >
+                    <button class="btn btn-dark mobile-menu-toggle" style="margin-top: +60px; margin-right: -30px; background-color: #333; color: white; border: 2px solid #666; padding: 8px 15px; font-weight: bold; box-shadow: 0 2px 4px rgba(0,0,0,0.2);">
+                        <span>☰ Menu</span>
+                    </button>
                     <ul class="navbar-nav flex-row justify-content-center">
                         <li class="nav-item">
                             <a href="./" class="nav-link active">Home</a>
@@ -150,9 +270,6 @@
             </body> 
         </section>
 
-
-
-
         <!-- Main -->
         <section id="main">
             <div class="container">
@@ -164,8 +281,8 @@
                                 <h2>Research Interests</h2>
                                 <h5><b>In the Yu laboratory, we investigate the regulatory role of protein arginine methylation in diverse cellular processes in eukaryotes. Utilizing both budding yeast and mammalian cells as model organisms, we employ an interdisciplinary approach to explore the impact of this post-translational modification on transcriptional regulation, pre-mRNA processing, and signaling pathways. Additionally, we are focused on understanding the dysregulation of these methylation-dependent cellular mechanisms in disease states.</b></h5>
                             </header>
-                            <div class="row row-cols-md-1 row-cols-md-3 g-3">
-                                <div class="col">
+                            <div class="row row-cols-1 row-cols-md-3 g-3">
+                                <div class="col mb-4 mb-md-0">
                                     <div class="card h-100" style="box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);">
                                         <a href="research topic 1.html">
                                             <img src="./images/pic01.jpg" class="card-img-top" alt="...">
@@ -181,8 +298,8 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col">
-                                    <div class="card h-100" style="box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);"">
+                                <div class="col mb-4 mb-md-0">
+                                    <div class="card h-100" style="box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);">
                                         <a href="research topic 2.html">
                                             <img src="./images/pic03.jpg" class="card-img-top" alt="...">
                                             <!-- UPDATING RESEARCH PREVIEW IMAGE 2 -->
@@ -220,7 +337,7 @@
 
                         <!-- Blog -->
                         <!---->
-                        <section class="w-50 mx-auto">
+                        <section class="w-100 w-md-50 mx-auto">
                             <header class="major">
                                 <h2>The Blog</h2>
                             </header>
@@ -233,7 +350,9 @@
                         </section>
                         <!-- Twitter Timeline -->
                         <section class="twitter-timeline">
-                            <iframe src='https://www.juicer.io/api/feeds/argmethylation-a3762cf7-538b-4170-bfd1-40ffa26d06c4/iframe' frameborder='0' width='1000' height='1000' style='display:block;margin:0 auto;'></iframe> 
+                            <div class="responsive-iframe-container">
+                                <iframe src='https://www.juicer.io/api/feeds/argmethylation-a3762cf7-538b-4170-bfd1-40ffa26d06c4/iframe' frameborder='0' width='1000' height='1000' style='display:block;margin:0 auto;max-width:100%;'></iframe> 
+                            </div>
                             <!-- PROBLEMS WITH THE BLOG -->
                         </section>
                     </div>
@@ -247,7 +366,7 @@
             <div class="container">
                 <div class="row aln-center">    
 
-                    <div class="col-4 col-12-medium">
+                    <div class="col-md-4 col-12 mb-4 mb-md-0">
                         <section>
                             <header>
                                 <h2>Contact</h2>
@@ -277,7 +396,7 @@
                             </ul>
                         </section>
                     </div>
-                    <div class="col-4 col-12-medium" id="social-id">
+                    <div class="col-md-4 col-12" id="social-id">
                         <section>
                             <header>
                                 <h2>Socials</h2>
@@ -312,13 +431,58 @@
     <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous">
         </script> -->
-    <!-- <script src=”https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js” 
-        integrity=”sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl” crossorigin=”anonymous”>
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" 
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
         </script> -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-        
+    
+    <!-- Mobile menu toggle script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+            const navbarNav = document.querySelector('.navbar-nav');
+            
+            mobileMenuToggle.addEventListener('click', function() {
+                navbarNav.classList.toggle('show');
+            });
+            
+            // Handle dropdown menus on mobile
+            const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+            
+            dropdownToggles.forEach(function(toggle) {
+                toggle.addEventListener('click', function(e) {
+                    if (window.innerWidth < 992) {
+                        e.preventDefault();
+                        const dropdownMenu = this.nextElementSibling;
+                        dropdownMenu.classList.toggle('show');
+                    }
+                });
+            });
+            
+            // Close dropdowns when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!e.target.closest('.dropdown')) {
+                    const openDropdowns = document.querySelectorAll('.dropdown-menu.show');
+                    openDropdowns.forEach(function(dropdown) {
+                        dropdown.classList.remove('show');
+                    });
+                }
+            });
+            
+            // Adjust for window resize
+            window.addEventListener('resize', function() {
+                if (window.innerWidth >= 992) {
+                    navbarNav.classList.remove('show');
+                    const openDropdowns = document.querySelectorAll('.dropdown-menu.show');
+                    openDropdowns.forEach(function(dropdown) {
+                        dropdown.classList.remove('show');
+                    });
+                }
+            });
+        });
+    </script>
 
 </body>
 
